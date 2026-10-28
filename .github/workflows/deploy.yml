@@ -29,11 +29,10 @@ jobs:
       - name: Configurar Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22
-          cache: 'npm'
+          node-version: 20
 
       - name: Instalar dependencias
-        run: npm ci || npm install --legacy-peer-deps
+        run: npm install --legacy-peer-deps
 
       - name: Compilar proyecto Angular para GitHub Pages
         run: npx ng build --configuration production --base-href /portafolio-ariana-cruzado/
