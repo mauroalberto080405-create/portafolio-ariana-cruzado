@@ -47,6 +47,12 @@
       border: 1px solid $color-accent-border;
       border-radius: $radius-sm;
       flex-shrink: 0;
+
+      &--linkedin {
+        background-color: #f0f7ff;
+        border-color: #cce4ff;
+        color: #0a66c2;
+      }
     }
 
     &__details {

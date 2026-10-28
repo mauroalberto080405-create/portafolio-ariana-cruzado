@@ -20,6 +20,7 @@ export class ProfileDataService implements IContentService {
     headline: 'Estudiante de Administración y Negocios Internacionales | Emprendedora',
     location: 'Trujillo, La Libertad, Perú',
     email: 'arianitacruzado20@gmail.com',
+    linkedInUrl: 'https://www.linkedin.com/in/ariana-cruzado-54a791204/',
     aboutNarrative: [
       'Estudiante de octavo ciclo de la carrera de Administración y Negocios Internacionales en la Universidad Privada del Norte (UPN), orientada al aprendizaje continuo y a la aplicación práctica de principios de gestión empresarial.',
       'Mi trayectoria combina la rigurosidad académica con la experiencia directa en Johari Shop Beauty, emprendimiento en el que me desempeño como gerente y propietaria desde abril de 2022. Esta vivencia me ha permitido asumir la gestión operativa, la atención personalizada a clientes, la planificación de compras y la promoción digital en el mercado local.',
@@ -75,6 +76,18 @@ export class ProfileDataService implements IContentService {
         'Atención al cliente',
         'Gestión de redes sociales',
         'Liderazgo'
+      ],
+      evidenceLinks: [
+        {
+          label: 'Instagram oficial (@johari_shopbeauty)',
+          url: 'https://www.instagram.com/johari_shopbeauty',
+          iconType: 'instagram'
+        },
+        {
+          label: 'Sitio y catálogo en línea',
+          url: 'https://johari-shop-beauty.netlify.app/',
+          iconType: 'web'
+        }
       ]
     }
   ];

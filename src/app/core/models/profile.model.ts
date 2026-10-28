@@ -5,6 +5,7 @@ export interface ProfileSummary {
   location: string;
   email: string;
   phone?: string; // Reservado para uso privado o autorizado
+  linkedInUrl?: string;
   aboutNarrative: string[];
   keyStrengths: string[];
   ctaButtons: {
@@ -28,6 +29,7 @@ export interface WorkExperience {
   responsibilities: string[];
   verifiedScope: string;
   skillsApplied: string[];
+  evidenceLinks?: { label: string; url: string; iconType: 'instagram' | 'web' | 'external' }[];
 }
 
 export interface AcademicEducation {

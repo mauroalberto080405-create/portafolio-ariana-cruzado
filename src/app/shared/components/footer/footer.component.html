@@ -27,9 +27,15 @@
     </div>
 
     <div class="footer__contact-group">
-      <h3 class="footer__heading">Contacto</h3>
+      <h3 class="footer__heading">Contacto & Redes</h3>
       <p class="footer__contact-item">
         <a [href]="'mailto:' + profile.email">{{ profile.email }}</a>
+      </p>
+      <p class="footer__contact-item" *ngIf="profile.linkedInUrl">
+        <a [href]="profile.linkedInUrl" target="_blank" rel="noopener noreferrer">LinkedIn de Ariana ↗</a>
+      </p>
+      <p class="footer__contact-item">
+        <a href="https://www.instagram.com/johari_shopbeauty" target="_blank" rel="noopener noreferrer">Instagram: @johari_shopbeauty ↗</a>
       </p>
       <p class="footer__contact-location">{{ profile.location }}</p>
     </div>
