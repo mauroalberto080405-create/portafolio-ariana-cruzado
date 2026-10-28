@@ -1,0 +1,40 @@
+<header class="header" [class.header--scrolled]="isScrolled" role="banner">
+  <div class="container header__container">
+    <a href="#inicio" class="header__brand" aria-label="Volver al inicio - Ariana Cruzado">
+      <span class="header__monogram" aria-hidden="true">AC</span>
+      <div class="header__name-group">
+        <span class="header__name">{{ profile.preferredName }}</span>
+        <span class="header__sub">Adm. & Negocios Internacionales</span>
+      </div>
+    </a>
+
+    <!-- Botón hamburguesa móvil -->
+    <button 
+      class="header__toggle" 
+      type="button" 
+      [attr.aria-expanded]="isMobileMenuOpen" 
+      aria-label="Abrir menú de navegación"
+      (click)="toggleMobileMenu()">
+      <span class="header__toggle-bar"></span>
+      <span class="header__toggle-bar"></span>
+      <span class="header__toggle-bar"></span>
+    </button>
+
+    <!-- Navegación principal -->
+    <nav class="header__nav" [class.header__nav--open]="isMobileMenuOpen" aria-label="Navegación principal">
+      <ul class="header__nav-list">
+        <li *ngFor="let link of navLinks" class="header__nav-item">
+          <a [href]="link.href" class="header__nav-link" (click)="closeMobileMenu()">
+            {{ link.label }}
+          </a>
+        </li>
+      </ul>
+
+      <div class="header__nav-actions">
+        <a href="#contacto" class="btn-cta" (click)="closeMobileMenu()">
+          Contactar
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>

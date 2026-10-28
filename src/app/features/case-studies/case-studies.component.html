@@ -1,0 +1,82 @@
+<section id="casos-practicos" class="case-studies section-padding" aria-labelledby="cases-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Metodología en Acción</span>
+      <h2 id="cases-heading" class="section-title">Casos Prácticos y Gestión Aplicada</h2>
+      <p class="section-subtitle">
+        Desglose estructurado de las actividades reales de gestión, compras y comercialización desarrolladas en Johari Shop Beauty.
+      </p>
+    </div>
+
+    <div class="cases-grid">
+      <article class="case-card" *ngFor="let caseItem of caseStudies">
+        <div class="case-card__header">
+          <span class="case-card__area">{{ caseItem.area }}</span>
+          <h3 class="case-card__title">{{ caseItem.title }}</h3>
+        </div>
+
+        <div class="case-card__body">
+          <!-- Contexto -->
+          <div class="case-field">
+            <h4 class="case-field__title">Contexto</h4>
+            <p class="case-field__content">{{ caseItem.context }}</p>
+          </div>
+
+          <!-- Objetivo -->
+          <div class="case-field">
+            <h4 class="case-field__title">Objetivo</h4>
+            <p class="case-field__content">{{ caseItem.objective }}</p>
+          </div>
+
+          <!-- Contribución de Ariana -->
+          <div class="case-field highlight-field">
+            <h4 class="case-field__title">Contribución de Ariana</h4>
+            <p class="case-field__content">{{ caseItem.roleContribution }}</p>
+          </div>
+
+          <!-- Acciones -->
+          <div class="case-field">
+            <h4 class="case-field__title">Acciones Principales</h4>
+            <ul class="case-actions-list">
+              <li *ngFor="let action of caseItem.actionsTaken">
+                <span class="action-bullet" aria-hidden="true">→</span>
+                <span>{{ action }}</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Herramientas -->
+          <div class="case-field">
+            <h4 class="case-field__title">Herramientas Empleadas</h4>
+            <div class="tools-tags">
+              <span class="tool-tag" *ngFor="let tool of caseItem.toolsUsed">{{ tool }}</span>
+            </div>
+          </div>
+
+          <!-- Aprendizajes y Resultados -->
+          <div class="case-field result-field">
+            <h4 class="case-field__title">Aprendizajes y Resultados Documentados</h4>
+            <p class="case-field__content">{{ caseItem.learningsAndResults }}</p>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- Guía y propuesta de materiales futuros -->
+    <div class="materials-note">
+      <div class="materials-note__icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="16" x2="12" y2="12"></line>
+          <line x1="12" y1="8" x2="12.01" y2="8"></line>
+        </svg>
+      </div>
+      <div class="materials-note__content">
+        <h4 class="materials-note__title">Evolución de evidencias para el portafolio</h4>
+        <p class="materials-note__text">
+          Esta sección presenta la metodología real de trabajo de Ariana. Para enriquecerla en futuras revisiones, se pueden incorporar: capturas anonimizadas de listas de pedidos o surtido, muestras de publicaciones de catálogo en redes sociales y síntesis de proyectos académicos de la UPN en comercio y administración.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

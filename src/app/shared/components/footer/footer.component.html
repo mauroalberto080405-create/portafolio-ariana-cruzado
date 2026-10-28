@@ -1,0 +1,48 @@
+<footer class="footer" role="contentinfo">
+  <div class="container footer__container">
+    <div class="footer__brand-group">
+      <div class="footer__brand">
+        <span class="footer__monogram" aria-hidden="true">AC</span>
+        <div class="footer__title-group">
+          <span class="footer__name">{{ profile.fullName }}</span>
+          <span class="footer__sub">Administración y Negocios Internacionales</span>
+        </div>
+      </div>
+      <p class="footer__bio">
+        Portafolio profesional desarrollado para presentar formación académica, experiencia emprendedora y competencias de gestión para oportunidades laborales.
+      </p>
+    </div>
+
+    <div class="footer__links-group">
+      <h3 class="footer__heading">Navegación</h3>
+      <ul class="footer__links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#experiencia">Experiencia</a></li>
+        <li><a href="#casos-practicos">Casos Prácticos</a></li>
+        <li><a href="#formacion">Formación</a></li>
+        <li><a href="#competencias">Competencias</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__contact-group">
+      <h3 class="footer__heading">Contacto</h3>
+      <p class="footer__contact-item">
+        <a [href]="'mailto:' + profile.email">{{ profile.email }}</a>
+      </p>
+      <p class="footer__contact-location">{{ profile.location }}</p>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <div class="container footer__bottom-container">
+      <p class="footer__copyright">
+        © {{ currentYear }} {{ profile.fullName }}. Todos los derechos reservados.
+      </p>
+      <p class="footer__transparency">
+        Diseñado bajo criterios de accesibilidad y fidelidad a la información curricular.
+      </p>
+    </div>
+  </div>
+</footer>

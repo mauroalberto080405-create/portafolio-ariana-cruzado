@@ -1,0 +1,176 @@
+@use 'styles/variables' as *;
+@use 'styles/mixins' as *;
+
+.case-studies {
+  background-color: $color-surface;
+}
+
+.cases-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+
+  @include respond-to(desktop) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond-to(tablet) {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+}
+
+.case-card {
+  @include card-base;
+  display: flex;
+  flex-direction: column;
+  padding: 1.85rem;
+  background-color: $color-bg;
+
+  &__header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid $color-border;
+  }
+
+  &__area {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: $color-accent-dark;
+    margin-bottom: 0.5rem;
+  }
+
+  &__title {
+    font-family: $font-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: $color-primary;
+    line-height: 1.35;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.15rem;
+    flex-grow: 1;
+  }
+
+  .case-field {
+    &__title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: $color-text-soft;
+      margin-bottom: 0.3rem;
+    }
+
+    &__content {
+      font-size: 0.8875rem;
+      color: $color-text-muted;
+      line-height: 1.55;
+    }
+
+    &.highlight-field {
+      background-color: $color-primary-subtle;
+      padding: 0.85rem;
+      border-radius: $radius-sm;
+
+      .case-field__title {
+        color: $color-primary;
+      }
+
+      .case-field__content {
+        color: $color-primary-dark;
+        font-weight: 500;
+      }
+    }
+
+    &.result-field {
+      background-color: $color-accent-light;
+      border-left: 3px solid $color-accent;
+      padding: 0.85rem;
+      border-radius: 0 $radius-sm $radius-sm 0;
+
+      .case-field__title {
+        color: $color-accent-dark;
+      }
+
+      .case-field__content {
+        color: $color-text-main;
+      }
+    }
+  }
+
+  .case-actions-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.45rem;
+      font-size: 0.875rem;
+      color: $color-text-muted;
+      line-height: 1.45;
+
+      .action-bullet {
+        color: $color-accent;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .tools-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .tool-tag {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: $color-text-main;
+    background-color: $color-surface;
+    border: 1px solid $color-border;
+    padding: 0.25rem 0.6rem;
+    border-radius: $radius-pill;
+  }
+}
+
+.materials-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background-color: $color-surface-alt;
+  border: 1px dashed $color-border;
+  border-radius: $radius-md;
+
+  &__icon {
+    color: $color-primary-light;
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+  }
+
+  &__title {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: $color-primary;
+    margin-bottom: 0.35rem;
+  }
+
+  &__text {
+    font-size: 0.875rem;
+    color: $color-text-muted;
+    line-height: 1.6;
+  }
+}

@@ -1,0 +1,47 @@
+<section id="sobre-mi" class="about section-padding" aria-labelledby="about-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Conóceme</span>
+      <h2 id="about-heading" class="section-title">Sobre mí y mi enfoque profesional</h2>
+      <p class="section-subtitle">
+        Una mirada honesta a mi formación académica, mi vocación por la administración y mi aprendizaje en el mundo real.
+      </p>
+    </div>
+
+    <div class="about__grid">
+      <!-- Columna Narrativa -->
+      <div class="about__narrative">
+        <div class="about__text-block" *ngFor="let paragraph of profile.aboutNarrative">
+          <p>{{ paragraph }}</p>
+        </div>
+
+        <div class="about__callout">
+          <div class="about__callout-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <div class="about__callout-content">
+            <h3 class="about__callout-title">Compromiso con la transparencia</h3>
+            <p class="about__callout-text">
+              Cada aspecto de este portafolio refleja exactamente las competencias, responsabilidades y niveles consignados en mi currículum vítae, respaldando mi perfil con honestidad frente a futuros empleadores.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna Pilares -->
+      <div class="about__pillars">
+        <h3 class="about__pillars-heading">Pilares de valor que aporto</h3>
+        
+        <div class="pillar-card" *ngFor="let pillar of pillars; let i = index">
+          <div class="pillar-card__number" aria-hidden="true">0{{ i + 1 }}</div>
+          <div class="pillar-card__content">
+            <h4 class="pillar-card__title">{{ pillar.title }}</h4>
+            <p class="pillar-card__desc">{{ pillar.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

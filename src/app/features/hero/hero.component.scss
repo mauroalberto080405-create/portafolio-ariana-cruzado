@@ -1,0 +1,344 @@
+@use 'styles/variables' as *;
+@use 'styles/mixins' as *;
+
+.hero {
+  padding-top: 8.5rem;
+  padding-bottom: 5.5rem;
+  background: linear-gradient(180deg, rgba($color-primary-subtle, 0.45) 0%, rgba($color-bg, 0.7) 100%);
+  position: relative;
+  overflow: hidden;
+
+  @include respond-to(tablet) {
+    padding-top: 6.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 3.5rem;
+    align-items: center;
+
+    @include respond-to(desktop) {
+      gap: 2.5rem;
+    }
+
+    @include respond-to(tablet) {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+  }
+
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: $color-primary;
+    background-color: $color-surface;
+    border: 1px solid $color-border;
+    padding: 0.35rem 0.85rem;
+    border-radius: $radius-pill;
+    margin-bottom: 1.25rem;
+    box-shadow: $shadow-sm;
+
+    &-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #22c55e;
+    }
+  }
+
+  &__title {
+    font-family: $font-serif;
+    font-size: 3.125rem;
+    font-weight: 700;
+    color: $color-primary;
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.02em;
+
+    @include respond-to(tablet) {
+      font-size: 2.25rem;
+    }
+
+    &-highlight {
+      color: $color-primary-light;
+      display: inline-block;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 4px;
+        left: 0;
+        width: 100%;
+        height: 8px;
+        background-color: rgba($color-accent-border, 0.45);
+        z-index: -1;
+        border-radius: 2px;
+      }
+    }
+  }
+
+  &__lead {
+    font-size: 1.125rem;
+    color: $color-text-muted;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 580px;
+
+    strong {
+      color: $color-text-main;
+      font-weight: 600;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  &__meta {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid $color-border;
+
+    @include respond-to(mobile) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: $color-text-soft;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    &-value {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: $color-primary;
+    }
+
+    &-divider {
+      width: 1px;
+      height: 2rem;
+      background-color: $color-border;
+
+      @include respond-to(mobile) {
+        display: none;
+      }
+    }
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.6rem;
+  border-radius: $radius-sm;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  transition: all $transition-fast;
+  text-align: center;
+
+  &--primary {
+    background-color: $color-primary;
+    color: #ffffff;
+
+    &:hover {
+      background-color: $color-primary-light;
+      transform: translateY(-2px);
+      box-shadow: $shadow-md;
+    }
+  }
+
+  &--secondary {
+    background-color: $color-surface;
+    color: $color-primary;
+    border: 1px solid $color-border;
+
+    &:hover {
+      background-color: $color-surface-alt;
+      border-color: darken($color-border, 8%);
+      transform: translateY(-2px);
+    }
+  }
+
+  &--outline {
+    background-color: transparent;
+    color: $color-primary;
+    border: 1.5px solid $color-primary;
+
+    &:hover {
+      background-color: $color-primary;
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+// Tarjeta Ejecutiva
+.profile-card {
+  background-color: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  padding: 2rem;
+  box-shadow: $shadow-lg;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, $color-primary 0%, $color-accent 100%);
+    border-top-left-radius: $radius-lg;
+    border-top-right-radius: $radius-lg;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 1.75rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid $color-border-subtle;
+  }
+
+  &__avatar {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid $color-accent-border;
+    box-shadow: $shadow-sm;
+
+    &-text {
+      font-family: $font-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: $color-accent-border;
+    }
+  }
+
+  &__identity {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: $color-primary;
+    line-height: 1.25;
+  }
+
+  &__role {
+    font-size: 0.85rem;
+    color: $color-accent-dark;
+    font-weight: 600;
+    margin-top: 0.2rem;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__data-row {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.875rem;
+
+    .data-label {
+      color: $color-text-soft;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .data-value {
+      color: $color-text-main;
+      font-weight: 500;
+      margin-top: 0.15rem;
+
+      &.highlight {
+        color: $color-primary;
+        font-weight: 600;
+      }
+    }
+  }
+
+  &__skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 1.25rem 0;
+    border-top: 1px solid $color-border-subtle;
+    border-bottom: 1px solid $color-border-subtle;
+    margin-bottom: 1.5rem;
+  }
+
+  .skill-pill {
+    font-size: 0.775rem;
+    font-weight: 600;
+    color: $color-primary;
+    background-color: $color-primary-subtle;
+    padding: 0.3rem 0.75rem;
+    border-radius: $radius-pill;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+  }
+
+  &__email-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: $color-primary;
+    background-color: $color-surface-alt;
+    padding: 0.65rem 1rem;
+    border-radius: $radius-sm;
+    width: 100%;
+    justify-content: center;
+    transition: background-color $transition-fast;
+
+    &:hover {
+      background-color: darken($color-surface-alt, 4%);
+    }
+
+    svg {
+      color: $color-accent;
+    }
+  }
+}

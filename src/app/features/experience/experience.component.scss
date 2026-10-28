@@ -1,0 +1,216 @@
+@use 'styles/variables' as *;
+@use 'styles/mixins' as *;
+
+.experience {
+  background-color: $color-bg;
+
+  &__list {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+}
+
+.experience-card {
+  @include card-base;
+  padding: 2.5rem;
+  background-color: $color-surface;
+
+  @include respond-to(tablet) {
+    padding: 1.75rem;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid $color-border;
+
+    @include respond-to(tablet) {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+
+  &__role-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__badge {
+    align-self: flex-start;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #15803d;
+    background-color: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    padding: 0.25rem 0.65rem;
+    border-radius: $radius-pill;
+    margin-bottom: 0.65rem;
+  }
+
+  &__role {
+    font-family: $font-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: $color-primary;
+    line-height: 1.25;
+  }
+
+  &__org-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.35rem;
+    flex-wrap: wrap;
+  }
+
+  &__org {
+    font-weight: 700;
+    color: $color-accent-dark;
+    font-size: 1.05rem;
+  }
+
+  &__dot {
+    color: $color-text-soft;
+  }
+
+  &__type {
+    font-size: 0.9rem;
+    color: $color-text-muted;
+  }
+
+  &__meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: $color-text-muted;
+
+    @include respond-to(tablet) {
+      align-items: flex-start;
+    }
+
+    span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+
+      svg {
+        color: $color-accent;
+      }
+    }
+  }
+
+  &__period {
+    font-weight: 600;
+    color: $color-primary;
+  }
+
+  &__description {
+    font-size: 1.05rem;
+    color: $color-text-main;
+    line-height: 1.7;
+    margin-bottom: 1.75rem;
+  }
+
+  &__responsibilities {
+    margin-bottom: 1.75rem;
+
+    .section-subheading {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: $color-primary;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .responsibilities-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .responsibility-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.95rem;
+    color: $color-text-muted;
+    line-height: 1.55;
+
+    .check-bullet {
+      color: $color-accent;
+      font-weight: bold;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+  }
+
+  &__scope {
+    margin-bottom: 1.75rem;
+  }
+
+  .scope-box {
+    background-color: $color-surface-alt;
+    border-left: 3px solid $color-primary;
+    padding: 1rem 1.25rem;
+    border-radius: 0 $radius-sm $radius-sm 0;
+
+    .scope-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: $color-primary;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .scope-text {
+      font-size: 0.875rem;
+      color: $color-text-muted;
+      line-height: 1.5;
+    }
+  }
+
+  &__skills {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding-top: 1.25rem;
+    border-top: 1px solid $color-border;
+
+    .skills-label {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: $color-text-soft;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .skills-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .chip {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: $color-primary;
+      background-color: $color-primary-subtle;
+      padding: 0.35rem 0.85rem;
+      border-radius: $radius-pill;
+    }
+  }
+}

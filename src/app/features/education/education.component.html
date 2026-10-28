@@ -1,0 +1,73 @@
+<section id="formacion" class="education section-padding" aria-labelledby="education-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Desarrollo Académico</span>
+      <h2 id="education-heading" class="section-title">Formación y Experiencias Internacionales</h2>
+      <p class="section-subtitle">
+        Estudios superiores en negocios internacionales complementados con experiencias y cursos académicos en el exterior.
+      </p>
+    </div>
+
+    <div class="education__layout">
+      <!-- Columna 1: Educación Universitaria Principal -->
+      <div class="education__column">
+        <h3 class="column-title">
+          <span class="column-icon" aria-hidden="true">🎓</span>
+          <span>Educación Superior</span>
+        </h3>
+
+        <div class="edu-card" *ngFor="let item of education">
+          <div class="edu-card__badge">{{ item.status }}</div>
+          <h4 class="edu-card__degree">{{ item.degree }}</h4>
+          <p class="edu-card__institution">{{ item.institution }}</p>
+          <div class="edu-card__period">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            <span>{{ item.period }}</span>
+          </div>
+          <p class="edu-card__desc" *ngIf="item.description">{{ item.description }}</p>
+        </div>
+      </div>
+
+      <!-- Columna 2: Cursos y Experiencias Internacionales -->
+      <div class="education__column">
+        <h3 class="column-title">
+          <span class="column-icon" aria-hidden="true">🌐</span>
+          <span>Proyección Internacional</span>
+        </h3>
+
+        <div class="intl-cards-list">
+          <div class="intl-card" *ngFor="let intl of internationalExperiences">
+            <div class="intl-card__type-badge" [class.badge-curso]="intl.type === 'curso'" [class.badge-mision]="intl.type === 'mision-academica'">
+              {{ intl.type === 'curso' ? 'Curso Internacional' : 'Misión Académica Internacional' }}
+            </div>
+            
+            <h4 class="intl-card__title">{{ intl.title }}</h4>
+            
+            <div class="intl-card__meta">
+              <span class="intl-destination">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                {{ intl.destination }}
+              </span>
+              <span class="intl-period" *ngIf="intl.period">{{ intl.period }}</span>
+            </div>
+
+            <p class="intl-card__desc">{{ intl.description }}</p>
+
+            <div class="intl-card__competencies">
+              <span class="comp-label">Áreas de enfoque:</span>
+              <div class="comp-chips">
+                <span class="comp-chip" *ngFor="let comp of intl.competencies">{{ comp }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

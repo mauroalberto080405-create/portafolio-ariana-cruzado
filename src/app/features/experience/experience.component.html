@@ -1,0 +1,72 @@
+<section id="experiencia" class="experience section-padding" aria-labelledby="experience-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Trayectoria Laboral</span>
+      <h2 id="experience-heading" class="section-title">Experiencia y Emprendimiento</h2>
+      <p class="section-subtitle">
+        Experiencia práctica en dirección comercial, abastecimiento y gestión integral desarrollada a través de mi propio negocio.
+      </p>
+    </div>
+
+    <div class="experience__list">
+      <article class="experience-card" *ngFor="let exp of experiences">
+        <div class="experience-card__header">
+          <div class="experience-card__role-group">
+            <span class="experience-card__badge" *ngIf="exp.isCurrent">Experiencia Activa</span>
+            <h3 class="experience-card__role">{{ exp.role }}</h3>
+            <div class="experience-card__org-row">
+              <span class="experience-card__org">{{ exp.organization }}</span>
+              <span class="experience-card__dot" aria-hidden="true">•</span>
+              <span class="experience-card__type">{{ exp.businessType }}</span>
+            </div>
+          </div>
+
+          <div class="experience-card__meta">
+            <span class="experience-card__period">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              {{ exp.period }}
+            </span>
+            <span class="experience-card__location">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              {{ exp.location }}
+            </span>
+          </div>
+        </div>
+
+        <p class="experience-card__description">{{ exp.description }}</p>
+
+        <div class="experience-card__responsibilities">
+          <h4 class="section-subheading">Responsabilidades y funciones desempeñadas:</h4>
+          <ul class="responsibilities-list">
+            <li *ngFor="let item of exp.responsibilities" class="responsibility-item">
+              <span class="check-bullet" aria-hidden="true">✓</span>
+              <span>{{ item }}</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="experience-card__scope">
+          <div class="scope-box">
+            <span class="scope-label">Alcance y respaldo:</span>
+            <p class="scope-text">{{ exp.verifiedScope }}</p>
+          </div>
+        </div>
+
+        <div class="experience-card__skills">
+          <span class="skills-label">Competencias aplicadas:</span>
+          <div class="skills-chips">
+            <span class="chip" *ngFor="let skill of exp.skillsApplied">{{ skill }}</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

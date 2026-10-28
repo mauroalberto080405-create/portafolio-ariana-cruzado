@@ -1,0 +1,45 @@
+<section id="competencias" class="skills-section section-padding" aria-labelledby="skills-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Perfil de Capacidades</span>
+      <h2 id="skills-heading" class="section-title">Competencias, Herramientas e Idiomas</h2>
+      <p class="section-subtitle">
+        Presentación fiel de habilidades personales, herramientas ofimáticas y dominio de idiomas, respaldada con contexto práctico y sin porcentajes arbitrarios.
+      </p>
+    </div>
+
+    <!-- Categorías de Habilidades -->
+    <div class="skills-categories-grid">
+      <div class="category-block" *ngFor="let category of skillCategories">
+        <div class="category-block__header">
+          <h3 class="category-block__title">{{ category.categoryName }}</h3>
+          <p class="category-block__desc">{{ category.description }}</p>
+        </div>
+
+        <div class="category-block__items">
+          <div class="skill-item" *ngFor="let skill of category.skills">
+            <div class="skill-item__header">
+              <span class="skill-item__name">{{ skill.name }}</span>
+              <span class="skill-item__level" *ngIf="skill.levelDeclared">{{ skill.levelDeclared }}</span>
+            </div>
+            <p class="skill-item__context">{{ skill.context }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bloque de Idiomas -->
+    <div class="languages-block">
+      <h3 class="languages-title">Idiomas</h3>
+      <div class="languages-grid">
+        <div class="lang-card" *ngFor="let lang of languages">
+          <div class="lang-card__header">
+            <h4 class="lang-card__name">{{ lang.language }}</h4>
+            <span class="lang-card__badge">{{ lang.level }}</span>
+          </div>
+          <p class="lang-card__details" *ngIf="lang.details">{{ lang.details }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

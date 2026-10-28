@@ -1,0 +1,177 @@
+@use 'styles/variables' as *;
+@use 'styles/mixins' as *;
+
+.contact {
+  background-color: $color-bg;
+}
+
+.contact-card {
+  @include card-base;
+  padding: 3rem;
+  background-color: $color-surface;
+
+  @include respond-to(tablet) {
+    padding: 1.75rem;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .contact-method {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.25rem;
+    background-color: $color-bg;
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+
+    @include respond-to(mobile) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    &__icon {
+      color: $color-accent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 3.25rem;
+      height: 3.25rem;
+      background-color: $color-accent-light;
+      border: 1px solid $color-accent-border;
+      border-radius: $radius-sm;
+      flex-shrink: 0;
+    }
+
+    &__details {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    &__label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: $color-text-soft;
+      margin-bottom: 0.2rem;
+    }
+
+    &__value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: $color-primary;
+      transition: color $transition-fast;
+
+      &:hover {
+        color: $color-accent-dark;
+      }
+
+      @include respond-to(mobile) {
+        font-size: 0.95rem;
+        word-break: break-all;
+      }
+    }
+
+    &__value-static {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: $color-text-main;
+    }
+  }
+
+  .btn-copy {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    padding: 0.45rem 0.9rem;
+    background-color: $color-surface;
+    border: 1px solid $color-border;
+    border-radius: $radius-sm;
+    color: $color-text-muted;
+    transition: all $transition-fast;
+
+    &:hover {
+      background-color: $color-surface-alt;
+      color: $color-primary;
+    }
+
+    .copied-badge {
+      color: #15803d;
+      font-weight: 700;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+
+    @include respond-to(mobile) {
+      flex-direction: column;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.75rem;
+      border-radius: $radius-sm;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: all $transition-fast;
+
+      &--primary {
+        background-color: $color-primary;
+        color: #ffffff;
+
+        &:hover {
+          background-color: $color-primary-light;
+          transform: translateY(-2px);
+          box-shadow: $shadow-md;
+        }
+      }
+
+      &--secondary {
+        background-color: $color-surface;
+        color: $color-primary;
+        border: 1px solid $color-border;
+
+        &:hover {
+          background-color: $color-surface-alt;
+          transform: translateY(-2px);
+        }
+      }
+    }
+  }
+
+  &__privacy {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1.25rem;
+    background-color: $color-surface-alt;
+    border-radius: $radius-sm;
+    font-size: 0.8125rem;
+    color: $color-text-muted;
+    line-height: 1.5;
+
+    svg {
+      color: $color-accent;
+      flex-shrink: 0;
+      margin-top: 0.15rem;
+    }
+
+    strong {
+      color: $color-text-main;
+    }
+  }
+}
